@@ -61,6 +61,7 @@ az aks get-credentials --resource-group aks-rg1 --name aksdemo1
 # List Kubernetes Worker Nodes
 kubectl get nodes 
 kubectl get nodes -o wide
+kubectl
 ```
 
 ## Step-04: Explore Cluster Control Plane and Workload inside that
@@ -69,12 +70,20 @@ kubectl get nodes -o wide
 kubectl get namespaces
 kubectl get ns
 
+#                                                    NAME              STATUS   AGE
+# default           Active   16m
+# kube-node-lease   Active   16m
+# kube-public       Active   16m
+# kube-system       Active   16m
+
 # List Pods from all namespaces
 kubectl get pods --all-namespaces
 
 # List all k8s objects from Cluster Control plane
 kubectl get all --all-namespaces
 ```
+
+
 
 ## Step-05: Explore the AKS cluster on Azure Management Console
 - Explore the following features on high-level
@@ -148,11 +157,15 @@ kubectl apply -f kube-manifests/
 # Verify Pods
 kubectl get pods
 
+kubectl describe pods #gives steps performed
+
 # Verify Deployment
 kubectl get deployment
 
 # Verify Service (Make a note of external ip)
 kubectl get service
+#or
+kubectl get svc
 
 # Access Application
 http://<External-IP-from-get-service-output>
