@@ -151,6 +151,10 @@ kubectl get nodes -o wide
 - By the time we complete **Kubernetes Fundamentals** sections, you will be an expert in writing Kubernetes manifest in YAML.
 - For now just focus on result. 
 ```t
+# set local credentials to connect with aks
+ az aks get-credentials --resource-group aks-rg1 --name aksdemo1
+#>Merged "aksdemo1" as current context in C:\Users\SKAN\.kube\config
+
 # Deploy Application
 kubectl apply -f kube-manifests/
 
@@ -169,12 +173,25 @@ kubectl get svc
 
 # Access Application
 http://<External-IP-from-get-service-output>
+
+
+#logs
+kubectl logs -f <pod-name>
+
+#events occured
+kubectl describe pod <pod-name>
 ```
 
 ## Step-07: Clean-Up
 ```t
 # Delete Applications
 kubectl delete -f kube-manifests/
+
+
+#check
+kubectl get pods
+kubectl get svc #only cluster ip exists
+kubectl get deploy
 ```
 
 ## References
