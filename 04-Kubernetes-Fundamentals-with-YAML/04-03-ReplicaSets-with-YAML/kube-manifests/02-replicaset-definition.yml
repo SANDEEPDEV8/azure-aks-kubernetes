@@ -6,8 +6,8 @@ spec: # Dictionary
   replicas: 3
   selector:
     matchLabels:
-      app: myapp2
-  template:  
+      app: myapp2 # same as below pod label
+  template:  # contains pod specification. below copy complete pod metadat from pod-definition.yml file. its same
     metadata: # Dictionary
       name: myapp2-pod
       labels: # Dictionary
@@ -18,4 +18,11 @@ spec: # Dictionary
           image: stacksimplify/kubenginx:2.0.0
           ports: 
             - containerPort: 80  
-    
+# https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#replicaset-v1-apps
+# In many cases it is recommended to create a Deployment instead of ReplicaSet, because deployment is the superset of replicaset
+
+# kubectl apply -f 02-replicaset-definition.yml
+# kubectl get rs
+# kubectl get pods
+
+# kubectl delete pod <name>   |>> it auto creates

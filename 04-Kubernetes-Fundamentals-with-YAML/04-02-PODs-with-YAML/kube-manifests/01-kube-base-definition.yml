@@ -8,6 +8,13 @@ spec:
 # Pod, ReplicaSet, Deployment, Service and many more
 
 # apiVersion: version of k8s objects
+# v1 means core group of pod :https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#pod-v1-core
+# apiVersion: core/v1 or apiVersion: v1
+# kind: Pod
+
+
+
+
 # kind: k8s objects 
 # metadata: define name and labels for k8s objects
 # spec: specification or real definition for k8s objects

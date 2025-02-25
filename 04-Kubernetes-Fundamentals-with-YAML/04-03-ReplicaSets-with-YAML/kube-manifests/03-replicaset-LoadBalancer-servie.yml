@@ -5,8 +5,11 @@ metadata:
 spec:
   type: LoadBalancer # ClusterIp, # NodePort
   selector:
-    app: myapp2
+    app: myapp2 #replicaset pod
   ports: 
     - name: http
       port: 80 # Service Port
       targetPort: 80 # Container Port
+
+# kubectl apply -f 03-replicaset-loadbalancer-service.yml
+# kubectl get svc  |>> use ip in browser

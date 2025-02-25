@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-restapp
-  labels:
-    app: backend-restapp
+  labels: #optional
+    app: backend-restapp 
     tier: backend 
 spec:
   replicas: 3
@@ -12,8 +12,8 @@ spec:
       app: backend-restapp
   template:
     metadata:
-      labels:
-        app: backend-restapp
+      labels: #mandatory
+        app: backend-restapp # same as pod label 
         tier: backend 
     spec: 
       containers:

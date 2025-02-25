@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: myapp-pod-loadbalancer-service
 spec:
-  type: LoadBalancer # ClusterIp, # NodePort
+  type: LoadBalancer # LoadBalancer, # ClusterIp, # NodePort
   selector:
-    app: myapp
+    app: myapp # this shouldbe same as pod name. whatever traffic comes to this service is sent to that pod
   ports: 
     - name: http
       port: 80 # Service Port
